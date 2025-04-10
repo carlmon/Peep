@@ -2,6 +2,8 @@
 
 A tool designed to hook into Windows applications and output named \(and anonymous?\) pipe traffic.
 
+Read [the research blog post](https://cybercx.co.nz/blog/harnessing-the-power-of-named-pipes/).
+
 ## Why?
 
 During Thick Client Penetration Testing engagements, applications occasionally utilise Named Pipes for communication between the clients and locally hosted servers.
@@ -22,18 +24,18 @@ This tool can be used to hook both new and running instances of the target appli
 ## Installation
 
 Using a Windows system or VM with Python and Pip:
-```
+```sh
 pip install frida-tools
 ```
 
 ## Usage
 
 To hook a new instance of the application, run the following command:
-```
+```sh
 frida server.exe -l peep.js
 ```
 
 To hook a running instance of the application, identify the target's PID using `Task Manager`'s `Details` view and run the following command:
-```
+```sh
 frida -p 12345 -l peep.js
 ```
